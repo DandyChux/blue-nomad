@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/dandychux/blue_nomad/internal/services"
+	"github.com/dandychux/blue-nomad/internal/services"
 )
 
 // ── Request type ───────────────────────────────────────────────────────────────

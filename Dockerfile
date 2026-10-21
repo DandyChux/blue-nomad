@@ -46,7 +46,7 @@ COPY cmd/ ./cmd/
 COPY internal/ ./internal/
 COPY migrations/ ./migrations/
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o blue_nomad ./cmd/server
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o blue-nomad ./cmd/server
 
 # ---------------------------------------------------------------------------
 # Stage 3: Prod — minimal image with binary + static assets
@@ -56,7 +56,7 @@ FROM alpine:latest AS prod
 WORKDIR /app
 
 # Copy the Go binary
-COPY --from=builder /app/blue_nomad .
+COPY --from=builder /app/blue-nomad .
 
 # Goose binary
 COPY --from=builder /go/bin/goose /usr/local/bin/goose
@@ -73,4 +73,4 @@ HEALTHCHECK --interval=30s --timeout=3s \
   CMD curl -f http://localhost:8080/healthcheck || exit 1
 
 EXPOSE 8080
-CMD ["./blue_nomad"]
+CMD ["./blue-nomad"]

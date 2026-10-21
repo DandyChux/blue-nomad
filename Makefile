@@ -30,7 +30,7 @@ frontend:
 
 build: frontend
 	@echo "Building backend..."
-	go build -o bin/blue_nomad ./cmd/server/main.go
+	go build -o bin/blue-nomad ./cmd/server/main.go
 
 clean:
 	@echo "Cleaning..."

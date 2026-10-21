@@ -17,7 +17,7 @@ import (
 
 	_ "time/tzdata"
 
-	"github.com/dandychux/blue_nomad/internal/services"
+	"github.com/dandychux/blue-nomad/internal/services"
 )
 
 type WebhookPayload struct {

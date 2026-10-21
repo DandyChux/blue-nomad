@@ -12,9 +12,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/dandychux/blue_nomad/internal/handlers"
-	"github.com/dandychux/blue_nomad/internal/middleware"
-	"github.com/dandychux/blue_nomad/internal/services"
+	"github.com/dandychux/blue-nomad/internal/handlers"
+	"github.com/dandychux/blue-nomad/internal/middleware"
+	"github.com/dandychux/blue-nomad/internal/services"
 
 	"github.com/joho/godotenv"
 )

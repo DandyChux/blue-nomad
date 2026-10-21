@@ -12,7 +12,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/dandychux/blue_nomad/internal/services"
+	"github.com/dandychux/blue-nomad/internal/services"
 )
 
 // ShopHandler serves catalog data and processes payments via Square.

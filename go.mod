@@ -1,4 +1,4 @@
-module github.com/dandychux/blue_nomad
+module github.com/dandychux/blue-nomad
 
 go 1.25.7
 

@@ -1,4 +1,4 @@
-import { toHTML, type PortableTextComponents } from '@portabletext/to-html';
+import { toHTML, type PortableTextComponents } from "@portabletext/to-html";
 
 /**
  * Custom Portable Text components that mirror the old Next.js renderers.
@@ -7,21 +7,33 @@ import { toHTML, type PortableTextComponents } from '@portabletext/to-html';
 const components: PortableTextComponents = {
 	types: {
 		image: ({ value }) => {
-			const url = value?.asset?.url ?? '';
-			const alt = value?.alt ?? '';
-			return `<enhanced:img src="${url}" alt="${alt}" width="800" loading="lazy" class="rounded-lg my-8 mx-auto" />`;
+			const url = value?.asset?.url ?? "";
+			const alt = value?.alt ?? "";
+			const width = value?.width ?? 800;
+			const height = value?.height;
+			const loading = value?.loading ?? "lazy";
+			const className = value?.className ?? "rounded-lg my-8 mx-auto";
+
+			return `<img src="${url}" alt="${alt}" width="${width}" height="${height}" loading="${loading}" class="${className}" />`;
 		},
 	},
 
 	block: {
 		normal: ({ children }) => `<p class="mb-4 font-medium">${children}</p>`,
-		blockquote: ({ children }) => `<blockquote class="mb-4">${children}</blockquote>`,
-		h1: ({ children }) => `<h1 class="mb-4 font-extrabold">${children}</h1>`,
-		h2: ({ children }) => `<h2 class="mb-4 font-extrabold">${children}</h2>`,
-		h3: ({ children }) => `<h3 class="mb-4 font-extrabold">${children}</h3>`,
-		h4: ({ children }) => `<h4 class="mb-4 font-extrabold">${children}</h4>`,
-		h5: ({ children }) => `<h5 class="mb-4 font-extrabold">${children}</h5>`,
-		h6: ({ children }) => `<h6 class="mb-4 font-extrabold">${children}</h6>`,
+		blockquote: ({ children }) =>
+			`<blockquote class="mb-4">${children}</blockquote>`,
+		h1: ({ children }) =>
+			`<h1 class="mb-4 font-extrabold">${children}</h1>`,
+		h2: ({ children }) =>
+			`<h2 class="mb-4 font-extrabold">${children}</h2>`,
+		h3: ({ children }) =>
+			`<h3 class="mb-4 font-extrabold">${children}</h3>`,
+		h4: ({ children }) =>
+			`<h4 class="mb-4 font-extrabold">${children}</h4>`,
+		h5: ({ children }) =>
+			`<h5 class="mb-4 font-extrabold">${children}</h5>`,
+		h6: ({ children }) =>
+			`<h6 class="mb-4 font-extrabold">${children}</h6>`,
 	},
 
 	list: {
@@ -32,22 +44,25 @@ const components: PortableTextComponents = {
 	},
 
 	listItem: {
-		bullet: ({ children }) => `<li class="mb-2 list-disc list-inside">${children}</li>`,
-		number: ({ children }) => `<li class="mb-2 list-decimal list-inside">${children}</li>`,
+		bullet: ({ children }) =>
+			`<li class="mb-2 list-disc list-inside">${children}</li>`,
+		number: ({ children }) =>
+			`<li class="mb-2 list-decimal list-inside">${children}</li>`,
 	},
 
 	marks: {
 		strong: ({ children }) => `<strong>${children}</strong>`,
 		em: ({ children }) => `<em>${children}</em>`,
 		link: ({ children, value }) => {
-			const href = value?.href ?? '#';
-			const isExternal = href.startsWith('http://') || href.startsWith('https://');
-			const rel = isExternal ? 'noreferrer noopener' : undefined;
-			const target = isExternal ? '_blank' : undefined;
-			return `<a href="${href}"${target ? ` target="${target}"` : ''}${rel ? ` rel="${rel}"` : ''}>${children}</a>`;
+			const href = value?.href ?? "#";
+			const isExternal =
+				href.startsWith("http://") || href.startsWith("https://");
+			const rel = isExternal ? "noreferrer noopener" : undefined;
+			const target = isExternal ? "_blank" : undefined;
+			return `<a href="${href}"${target ? ` target="${target}"` : ""}${rel ? ` rel="${rel}"` : ""}>${children}</a>`;
 		},
 		footnote: ({ children, value }) => {
-			const key = value?._key ?? '';
+			const key = value?._key ?? "";
 			return `<span id="src-${key}">${children}<sup><a href="#note-${key}">?</a></sup></span>`;
 		},
 	},
@@ -60,6 +75,6 @@ const components: PortableTextComponents = {
  * Use with {@html renderPortableText(body)} in Svelte templates.
  */
 export function renderPortableText(value: any[]): string {
-	if (!value) return '';
+	if (!value) return "";
 	return toHTML(value, { components });
 }
