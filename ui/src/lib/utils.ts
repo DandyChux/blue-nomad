@@ -21,7 +21,7 @@ export function getOptimizedImageUrl(
 		quality?: number;
 	},
 ): string {
-	const IMGPROXY_URL = "https://img.bluenomadworld.com";
+	const IMGPROXY_URL = "https://img.ceokoroji.dev";
 
 	// If no size is provided, default to 0 (Imgproxy keeps original width)
 	const width = options?.size === "auto" ? 0 : options?.size || 0;
