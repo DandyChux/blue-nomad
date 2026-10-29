@@ -9,6 +9,7 @@
 	import { SITE_TITLE } from "./+layout.svelte";
 	import { generateSrcSet } from "$lib/utils";
 	import { pressBrands } from "$lib";
+	import Picture from "$lib/components/picture.svelte";
 </script>
 
 <svelte:head>
@@ -50,20 +51,20 @@
 <!-- Our Story Section -->
 <section class="py-12 px-8 lg:items-center">
 	<div class="relative flex-1">
-		<img
+		<Picture
 			src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/Christian/Look%204%20139.webp"
-			srcset={generateSrcSet(
-				"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/Christian/Look%204%20139.webp",
-				[400, 800, 1200, 1600],
-				"webp",
-				85,
-			)}
 			alt=""
 			width="400"
 			height="600"
 			class="w-full h-auto"
 			loading="lazy"
-			sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, (max-width: 1280px) 50vw, 33vw"
+			sizes="(max-width: 640px) 280px, (max-width: 1280px) 400px, 800px"
+			srcset={generateSrcSet(
+				"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/Christian/Look%204%20139.webp",
+				[200, 400, 800],
+				"webp",
+				85,
+			)}
 		/>
 	</div>
 
