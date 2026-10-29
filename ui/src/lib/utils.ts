@@ -108,7 +108,7 @@ export function generateSrcSet(
 	return widths
 		.map((width) => {
 			const url = getOptimizedImageUrl(src, {
-				size: width,
+				width,
 				format,
 				quality,
 			});
