@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import BookButton from "./book-button.svelte";
 	import Picture from "./picture.svelte";
 	import { Button, buttonVariants } from "./ui/button";

@@ -139,16 +139,7 @@
 		<!-- Video Background -->
 		<Video
 			class="absolute inset-0 w-full h-full object-cover opacity-60"
-			sources={[
-				{
-					src: "https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/videos/Blue%20Nomad%20-%20Treatment%20V1.webm",
-					type: "video/webm",
-				},
-				{
-					src: "https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/videos/Blue%20Nomad%20-%20Treatment%20V1.mp4",
-					type: "video/mp4",
-				},
-			]}
+			src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/assets/hero/booking%20hero/hero.mp4"
 		/>
 
 		<!-- Gradient Overlay -->
@@ -367,14 +358,6 @@
 			</div>
 		</div>
 
-		<!-- Press Ticker -->
-		<InfiniteMovingCards
-			items={pressBrands}
-			direction="right"
-			speed="normal"
-			class="mask-[linear-gradient(to_right,transparent_0%,white_20%,white_100%)] w-full max-w-[unset] my-16"
-		/>
-
 		<!-- <span
 			class="text-[32px] lg:text-[44px] uppercase text-center font-medium"
 			>also available</span
@@ -461,6 +444,14 @@
 			{/each}
 		</div> -->
 	{/if}
+
+	<!-- Press Ticker -->
+	<InfiniteMovingCards
+		items={pressBrands}
+		direction="right"
+		speed="normal"
+		class="mask-[linear-gradient(to_right,transparent_0%,white_20%,white_100%)] w-full max-w-[unset] my-16"
+	/>
 
 	<!-- Social & Testimonials -->
 	<UgcCarousel />

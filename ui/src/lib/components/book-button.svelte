@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { trackEvent } from "$lib/analytics.svelte";
 	import { Button, buttonVariants } from "./ui/button";
 
