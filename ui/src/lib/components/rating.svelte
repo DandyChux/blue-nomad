@@ -16,7 +16,7 @@
 </script>
 
 <div
-	class={["inline-flex items-center gap-1 text-black", className]}
+	class={["inline-flex items-center gap-1 text-black my-2", className]}
 	aria-label={`${normalizedValue} out of ${normalizedMax} stars`}
 >
 	{#each Array.from({ length: normalizedMax }) as _, index (index)}

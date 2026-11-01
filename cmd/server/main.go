@@ -132,6 +132,10 @@ func main() {
 	shopHandler := handlers.NewShopHandler(squareClient)
 	bookingHandler := handlers.NewBookingHandler(squareClient, bookingFlow)
 	diagnosticHandler := handlers.NewDiagnosticHandler(newsletterHandler)
+	imageHandler, err := handlers.NewImageHandler()
+	if err != nil {
+		log.Fatalf("failed to configure imgproxy: %v", err)
+	}
 
 	squareWorker := services.NewWebhookWorker(
 		webhookQueue,
@@ -175,6 +179,9 @@ func main() {
 	api.HandleFunc("POST /booking/request", bookingHandler.CreateRequest)
 	api.HandleFunc("POST /booking/requests/{id}/store-card", bookingHandler.StoreCardAndBook)
 	api.HandleFunc("POST /booking/requests/{id}/book-member", bookingHandler.BookFreeService)
+
+	// Images
+	api.HandleFunc("GET /images/{width}", imageHandler.Redirect)
 
 	// ── Static frontend files ───────────────────────────────────────────
 	staticDir := os.Getenv("STATIC_DIR")

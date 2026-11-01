@@ -18,7 +18,7 @@
 
 <!-- Hero Section -->
 <section
-	class="relative p-0 text-brand-white bg-studio-background bg-cover bg-no-repeat bg-center"
+	class="relative p-0 text-brand-white bg-studio-background bg-cover bg-no-repeat bg-center h-dvh"
 >
 	<div
 		class="flex flex-col m-[auto_0] pl-4 md:pl-8 pt-16 pb-8 gap-8 lg:gap-12 place-self-center"

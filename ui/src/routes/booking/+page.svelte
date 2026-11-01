@@ -4,10 +4,7 @@
 	import * as Pagination from "$lib/components/ui/pagination";
 	import * as Empty from "$lib/components/ui/empty";
 	import * as Item from "$lib/components/ui/item";
-	import * as Card from "$lib/components/ui/card";
-	import * as Carousel from "$lib/components/ui/carousel";
 	import Picture from "$lib/components/picture.svelte";
-	import Rating from "$lib/components/rating.svelte";
 	import { generateSrcSet, debounce, cn } from "$lib/utils";
 	import { page } from "$app/state";
 	import { goto } from "$app/navigation";
@@ -16,7 +13,12 @@
 	import Video from "$lib/components/video.svelte";
 	import InfiniteMovingCards from "$lib/components/infinite-moving-cards.svelte";
 	import { pressBrands } from "$lib";
+	import MembershipSection from "$lib/components/membership-section.svelte";
+	import UgcCarousel from "$lib/components/ugc-carousel.svelte";
+	import Reviews from "$lib/components/reviews.svelte";
+	import BookButton from "$lib/components/book-button.svelte";
 	import { trackEvent } from "$lib/analytics.svelte.js";
+	import SkinHealthGuide from "$lib/components/skin-health-guide.svelte";
 
 	let { data } = $props();
 
@@ -76,27 +78,6 @@
 
 	let featuredTreatmentId = $derived(coreTreatment?.id ?? null);
 
-	const testimonials = [
-		{
-			quote: "Calming, relaxing, informative, honest. Highly recommend! My skin feels and looks great.",
-			author: "Anna",
-			location: "Brooklyn",
-			rating: 5,
-		},
-		{
-			quote: "Come here for a bespoke and private treatment in a space that feels like…a new home.",
-			author: "Siba",
-			location: "Bed-Stuy",
-			rating: 5,
-		},
-		{
-			quote: "What an incredible experience! 10/10 recommend!!! I'm hooked.",
-			author: "Ron",
-			location: "West Village",
-			rating: 5,
-		},
-	];
-
 	// Intersection Observer to trigger animation on scroll
 	let testimonialsEl = $state<HTMLDivElement>();
 	let testimonialsVisible = $state(false);
@@ -150,11 +131,11 @@
 
 <svelte:window bind:innerWidth={width} bind:innerHeight={height} />
 
-<section class="min-h-screen w-full flex flex-col p-0">
+<section class="w-full flex flex-col p-0">
 	<!-- ======================== -->
 	<!-- HERO: Full-bleed Video   -->
 	<!-- ======================== -->
-	<div class="relative w-full h-[85vh] overflow-hidden bg-black">
+	<div class="relative w-full h-[70vh] overflow-hidden bg-black">
 		<!-- Video Background -->
 		<Video
 			class="absolute inset-0 w-full h-full object-cover opacity-60"
@@ -199,13 +180,17 @@
 				class="text-brand-white/70 md:text-[18px] max-w-xl leading-relaxed font-light text-center lg:text-start"
 				in:fly={{ y: 20, duration: 600, delay: 400 }}
 			>
-				Personalized treatments designed to restore, protect, and
-				support long-term skin health.
+				Our Facial Skin Therapy is a personalized treatment that
+				improves skin health and clarity for all skin.
 			</p>
 
 			<Button
 				variant="link"
 				href={`/booking/${featuredTreatmentId}`}
+				onclick={() =>
+					trackEvent("book_facial_st_click", {
+						props: { "Book Core Facial ST": "hero" },
+					})}
 				class={buttonVariants({
 					variant: "outline",
 					class: "border-brand-white text-brand-white rounded-full mt-10 border self-center px-8 uppercase tracking-wide font-source-code-pro hover:bg-brand-white hover:text-black",
@@ -214,6 +199,12 @@
 			>
 				Book Core Facial ST
 			</Button>
+			<!-- <BookButton
+				href={`/booking/${featuredTreatmentId}`}
+				label="Book Core Facial ST"
+				event="book_facial_st_click"
+				location="hero"
+			/> -->
 		</div>
 	</div>
 
@@ -347,8 +338,8 @@
 				<p
 					class="font-source-code-pro text-[12px] font-semibold leading-[1.2em] tracking-[1.6px] md:text-[16px] lg:col-start-1 lg:row-start-3"
 				>
-					Our core Facial Skin Therapy is a personalized treatment
-					that improves skin health and clarity.
+					Perosnalized treatments for all skin, with expertise in
+					breakouts, dark spots and sensitive skin.
 				</p>
 
 				<div class="col-start-2 row-start-3 justify-self-end">
@@ -376,7 +367,15 @@
 			</div>
 		</div>
 
-		<span
+		<!-- Press Ticker -->
+		<InfiniteMovingCards
+			items={pressBrands}
+			direction="right"
+			speed="normal"
+			class="mask-[linear-gradient(to_right,transparent_0%,white_20%,white_100%)] w-full max-w-[unset] my-16"
+		/>
+
+		<!-- <span
 			class="text-[32px] lg:text-[44px] uppercase text-center font-medium"
 			>also available</span
 		>
@@ -460,87 +459,15 @@
 					</Card.Footer>
 				</Card.Root>
 			{/each}
-		</div>
-
-		<!-- Press Brands (desktop) -->
-		{#if width >= 1024}
-			<InfiniteMovingCards
-				items={pressBrands}
-				direction="right"
-				speed="normal"
-				class="mask-[linear-gradient(to_right,transparent_0%,white_20%,white_100%)] w-full max-w-[unset] my-16"
-			/>
-		{/if}
+		</div> -->
 	{/if}
 
-	<!-- Press Brands (mobile) -->
-	{#if width < 1024}
-		<InfiniteMovingCards
-			items={pressBrands}
-			direction="right"
-			speed="normal"
-			class="mask-[linear-gradient(to_right,transparent_0%,white_20%,white_100%)] w-full max-w-[unset] my-16"
-		/>
-	{/if}
+	<!-- Social & Testimonials -->
+	<UgcCarousel />
 
-	<!-- Testimonials -->
-	{#if width >= 1024}
-		<Carousel.Root
-			class="max-w-[750px] mb-8 lg:my-12 px-6 md:px-12 lg:px-16 lg:mx-auto"
-			opts={{
-				loop: true,
-			}}
-		>
-			<Carousel.Content>
-				{#each testimonials as testimonial, i}
-					<Carousel.Item>
-						<div
-							class="flex flex-col lg:flex-row font-source-code-pro"
-							in:fly={{ y: 40, duration: 600, delay: i * 250 }}
-						>
-							<div class="flex flex-col basis-[40%]">
-								<p class=" text-sm font-bold tracking-[0.2em]">
-									<span class="uppercase"
-										>{testimonial.author}</span
-									>, {testimonial.location}
-								</p>
-								<span
-									class="font-source-code-pro text-foreground/70 text-xs"
-									>Verified Nomad</span
-								>
-							</div>
-							<div class="flex flex-col gap-4 basis-[60%]">
-								<Rating value={testimonial.rating} />
-								<p
-									class="text-lg leading-relaxed tracking-widest font-medium"
-								>
-									{testimonial.quote}
-								</p>
-							</div>
-						</div>
-					</Carousel.Item>
-				{/each}
-			</Carousel.Content>
-			<Carousel.Previous class="left-4" />
-			<Carousel.Next class="right-4" />
-		</Carousel.Root>
-	{:else if width < 1024}
-		<div class="flex flex-col space-y-12 items-center px-4 mb-40">
-			{#each testimonials as testimonial}
-				<div
-					class="flex flex-col items-center text-center gap-6 font-source-code-pro"
-				>
-					<p class="lg:text-xl text-center tracking-wide">
-						{testimonial.quote}
-					</p>
-					<p class=" text-sm font-bold tracking-[0.2em]">
-						<span class="uppercase">{testimonial.author}</span>, {testimonial.location}
-					</p>
-					<Rating value={testimonial.rating} class="mt-6" />
-				</div>
-			{/each}
-		</div>
-	{/if}
+	<Reviews />
+
+	<MembershipSection />
 
 	<div class="relative w-full py-8 px-12 lg:p-20">
 		<div class="absolute inset-0 m-0 -z-10">
@@ -580,7 +507,7 @@
 						class={buttonVariants({
 							variant: "outline",
 							class: "uppercase border-warm-ivory text-warm-ivory rounded-full px-8",
-						})}>Join</Button
+						})}>Become a member</Button
 					>
 				</Item.Actions>
 			</Item.Root>
@@ -600,7 +527,7 @@
 					>
 					<Item.Description
 						class={"uppercase text-primary-foreground/75 font-source-code-pro text-lg text-center lg:text-start"}
-						>Book a skin health consultation</Item.Description
+						>Begin with our signature Facial ST</Item.Description
 					>
 				</Item.Content>
 				<Item.Actions>
@@ -610,10 +537,12 @@
 						class={buttonVariants({
 							variant: "outline",
 							class: "uppercase border-warm-ivory text-warm-ivory rounded-full px-8",
-						})}>Explore</Button
+						})}>Book Facial ST</Button
 					>
 				</Item.Actions>
 			</Item.Root>
 		</div>
 	</div>
+
+	<SkinHealthGuide />
 </section>
