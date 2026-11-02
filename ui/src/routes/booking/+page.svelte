@@ -199,245 +199,141 @@
 		</div>
 	</div>
 
-	{#if paginatedServices.length === 0}
-		<div class="w-full flex justify-center py-32">
-			<Empty.Root
-				class="border border-dashed w-full max-w-xl min-h-[400px] flex flex-col items-center justify-center bg-transparent"
-			>
-				<Empty.Header>
-					<Empty.Title
-						class="uppercase font-source-code-pro font-normal tracking-widest text-sm"
-					>
-						No treatments found.
-					</Empty.Title>
-				</Empty.Header>
-			</Empty.Root>
-		</div>
-	{:else}
-		<div class="relative overflow-hidden px-6 md:px-10 py-2 lg:py-8">
-			<div
-				class="mx-auto max-w-[1100px] space-x-4 space-y-4 md:space-x-8 lg:space-x-10 lg:space-y-8"
-			>
-				<div class="flex items-center justify-between w-full">
-					<p class="text-[36px] leading-none lg:text-[48px]">
-						Before
-					</p>
+	<div
+		class="relative overflow-hidden px-6 md:px-10 py-2 lg:py-8 mt-12 lg:mt-30"
+	>
+		<div
+			class="mx-auto max-w-[1100px] space-x-4 space-y-4 md:space-x-8 lg:space-x-10 lg:space-y-8"
+		>
+			<div class="flex items-center justify-between w-full">
+				<p class="text-[36px] leading-none lg:text-[48px]">Before</p>
 
-					<p
-						class="text-left font-source-code-pro text-[12px] font-medium uppercase leading-[1.35] tracking-[0.2em] lg:text-right lg:text-[1.5rem]"
-					>
-						10 days after
-						<br />
-						first facial ST
-					</p>
-				</div>
+				<p
+					class="text-left font-source-code-pro text-[12px] font-medium uppercase leading-none tracking-[0.2em] lg:text-right lg:text-[1.5rem]"
+				>
+					10 days after
+					<br />
+					first facial ST
+				</p>
+			</div>
 
-				<div class="flex items-center space-x-4 justify-between w-full">
-					<div class="relative group ring-2 ring-card rounded-[15px]">
-						<a
-							class="absolute inset-0"
-							href={`/booking/${coreTreatment?.id}`}
+			<div class="flex items-center space-x-4 justify-between w-full">
+				<div class="relative group ring-2 ring-card rounded-[15px]">
+					<a
+						class="absolute inset-0"
+						href={`/booking/${coreTreatment?.id}`}
+					/>
+
+					<div
+						class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
+					>
+						<Picture
+							src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp"
+							alt="Before facial skin therapy result"
+							class="object-cover object-[center_75%]"
+							loading="eager"
+							width={720}
+							height={950}
+							sizes="(max-width: 1024px) 50vw, 50vw"
+							sources={[
+								{
+									type: "image/webp",
+									srcset: generateSrcSet(
+										"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp",
+										[480, 768, 1024, 1440],
+										"webp",
+										85,
+									),
+								},
+							]}
 						/>
-
-						<div
-							class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
-						>
-							<Picture
-								src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp"
-								alt="Before facial skin therapy result"
-								class="object-cover object-[center_75%]"
-								loading="eager"
-								width={720}
-								height={950}
-								sizes="(max-width: 1024px) 50vw, 50vw"
-								sources={[
-									{
-										type: "image/webp",
-										srcset: generateSrcSet(
-											"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp",
-											[480, 768, 1024, 1440],
-											"webp",
-											85,
-										),
-									},
-								]}
-							/>
-						</div>
-						<span
-							class="absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] transition-opacity duration-300"
-						>
-							{getDuration(coreTreatment)} Min — ${getPrice(
-								coreTreatment,
-							)}
-						</span>
 					</div>
+					<span
+						class="absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] transition-opacity duration-300"
+					>
+						{getDuration(coreTreatment)} Min — ${getPrice(
+							coreTreatment,
+						)}
+					</span>
+				</div>
 
-					<div class="relative group ring-2 ring-card rounded-[15px]">
-						<a
-							class="absolute inset-0"
-							href={`/booking/${coreTreatment?.id}`}
+				<div class="relative group ring-2 ring-card rounded-[15px]">
+					<a
+						class="absolute inset-0"
+						href={`/booking/${coreTreatment?.id}`}
+					/>
+
+					<div
+						class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
+					>
+						<Picture
+							src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp"
+							alt="After 10 days facial skin therapy result"
+							class="object-cover"
+							loading="eager"
+							width={720}
+							height={950}
+							sizes="(max-width: 1024px) 50vw, 50vw"
+							sources={[
+								{
+									type: "image/webp",
+									srcset: generateSrcSet(
+										"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp",
+										[480, 768, 1024, 1440],
+										"webp",
+										85,
+									),
+								},
+							]}
 						/>
-
-						<div
-							class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
-						>
-							<Picture
-								src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp"
-								alt="After 10 days facial skin therapy result"
-								class="object-cover"
-								loading="eager"
-								width={720}
-								height={950}
-								sizes="(max-width: 1024px) 50vw, 50vw"
-								sources={[
-									{
-										type: "image/webp",
-										srcset: generateSrcSet(
-											"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp",
-											[480, 768, 1024, 1440],
-											"webp",
-											85,
-										),
-									},
-								]}
-							/>
-						</div>
-						<span
-							class="absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] transition-opacity duration-300"
-						>
-							Book Now
-						</span>
 					</div>
-				</div>
-
-				<div class="flex items-center justify-between w-full">
-					<p
-						class="font-source-code-pro text-[12px] font-semibold leading-[1.2em] tracking-[1.6px] md:text-[16px] lg:w-[450px]"
+					<span
+						class="absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] transition-opacity duration-300"
 					>
-						Perosnalized treatments for all skin, with expertise in
-						breakouts, dark spots, and sensitive skin.
-					</p>
-
-					<div class="col-start-2 row-start-3 justify-self-end">
-						<p class="text-[36px] leading-none lg:text-[48px]">
-							After
-						</p>
-					</div>
-				</div>
-
-				<div class="flex items-center justify-around w-full">
-					<Button
-						variant="link"
-						href={`/booking/${coreTreatment.id}`}
-						class={buttonVariants({
-							size: "lg",
-							variant: "outline",
-							class: "col-span-1 col-start-1 row-start-4 w-fit min-w-0 max-w-full place-self-center lg:place-self-end rounded-full px-8 sm:px-6 lg:px-14 uppercase font-source-code-pro",
-						})}
-					>
-						Book Facial ST
-					</Button>
-					<Button
-						variant="link"
-						href="/shop"
-						class={buttonVariants({
-							size: "lg",
-							variant: "outline",
-							class: "w-fit min-w-0 max-w-full rounded-full px-8 sm:px-6 lg:px-14 col-span-1 col-start-2 row-start-4 place-self-start uppercase font-source-code-pro",
-						})}
-					>
-						Shop
-					</Button>
+						Book Now
+					</span>
 				</div>
 			</div>
-		</div>
 
-		<!-- <span
-			class="text-[32px] lg:text-[44px] uppercase text-center font-medium"
-			>also available</span
-		>
-		<div
-			class="mx-auto grid w-full max-w-400 auto-rows-fr grid-cols-1 justify-center gap-px px-4 sm:grid-cols-2 lg:gap-4"
-			class:lg:grid-cols-1={remaining.length === 1}
-			class:lg:grid-cols-2={remaining.length === 2}
-			class:lg:grid-cols-3={remaining.length === 3}
-			class:lg:grid-cols-4={remaining.length >= 4}
-			in:fade
-		>
-			{#each remaining as service (service.id)}
-				<Card.Root
-					class="group relative flex h-full w-full min-w-0 flex-col bg-background lg:bg-transparent shadow-none ring-0 py-0 rounded-none gap-0 my-2 lg:rounded-lg"
+			<div class="flex items-center justify-between w-full">
+				<p
+					class="font-source-code-pro text-[12px] font-semibold leading-[1.2em] tracking-[1.6px] md:text-[16px] lg:w-[450px]"
 				>
-					<a
-						href="/booking/{service.id}"
-						aria-label={`Book ${service.item_data.name}`}
-						class="absolute inset-0 z-10"
-					></a>
+					Perosnalized treatments for all skin, with expertise in
+					breakouts, dark spots, and sensitive skin.
+				</p>
 
-					{#if isNew(service.created_at)}
-						<span
-							class="absolute top-0 left-0 bg-background text-foreground lg:bg-card lg:text-brand-white uppercase rounded-sm z-10 py-2 px-8 font-source-code-pro font-semibold"
-						>
-							NEW
-						</span>
-					{/if}
+				<div class="col-start-2 row-start-3 justify-self-end">
+					<p class="text-[36px] leading-none lg:text-[48px]">After</p>
+				</div>
+			</div>
 
-					<Card.Content
-						class="relative rounded-lg lg:bg-card p-2 border-2 border-transparent group-hover:border-card"
-					>
-						<div class="aspect-4/5 overflow-hidden">
-							<Picture
-								src={service.image_url || ""}
-								alt={service.item_data.name}
-								class="block size-full object-cover"
-								loading="lazy"
-								sizes="(min-width: 1024px) 25vw, 50vw"
-								sources={service.image_url
-									? [
-											{
-												type: "image/webp",
-												srcset: generateSrcSet(
-													service.image_url,
-													[320, 480, 640, 768],
-													"webp",
-													80,
-												),
-											},
-										]
-									: []}
-							/>
-						</div>
-
-						<span
-							class="hidden lg:block absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] transition-opacity duration-300"
-						>
-							Book Treatment
-						</span>
-					</Card.Content>
-
-					<Card.Footer
-						class="items-center lg:items-start justify-between text-foreground lg:bg-transparent lg:flex-col lg:pt-4"
-					>
-						<div class="lg:self-end order-2 lg:order-1">
-							<span
-								class="font-source-code-pro text-[12px] lg:text-[14px] font-bold uppercase"
-							>
-								{getDuration(service)} min{getPrice(service) !==
-								"0"
-									? ` — $${getPrice(service)}`
-									: " – Member Rate"}
-							</span>
-						</div>
-						<h2
-							class="text-[14px] lg:text-[32px] order-1 lg:order-2 tracking-tight line-clamp-1 text-ellipsis"
-						>
-							{service.item_data.name}
-						</h2>
-					</Card.Footer>
-				</Card.Root>
-			{/each}
-		</div> -->
-	{/if}
+			<div class="flex items-center justify-around w-full">
+				<Button
+					variant="link"
+					href={`/booking/${coreTreatment.id}`}
+					class={buttonVariants({
+						size: "lg",
+						variant: "outline",
+						class: "col-span-1 col-start-1 row-start-4 w-fit min-w-0 max-w-full place-self-center lg:place-self-end rounded-full px-8 sm:px-6 lg:px-14 uppercase font-source-code-pro",
+					})}
+				>
+					Book Facial ST
+				</Button>
+				<Button
+					variant="link"
+					href="/shop"
+					class={buttonVariants({
+						size: "lg",
+						variant: "outline",
+						class: "w-fit min-w-0 max-w-full rounded-full px-8 sm:px-6 lg:px-14 col-span-1 col-start-2 row-start-4 place-self-start uppercase font-source-code-pro",
+					})}
+				>
+					Shop
+				</Button>
+			</div>
+		</div>
+	</div>
 
 	<!-- Press Ticker -->
 	<InfiniteMovingCards
