@@ -158,7 +158,7 @@
 				Blue Nomad Skin Health Studio
 			</p>
 			<h1
-				class="uppercase text-center lg:text-left text-[32px] lg:text-[72px] tracking-tighter font-light leading-[0.9] mb-6"
+				class="uppercase text-center lg:text-left text-[32px] lg:text-[72px] tracking-tighter leading-[0.9] mb-6"
 				in:fly={{ y: 20, duration: 600, delay: 300 }}
 			>
 				<span>Your Skin</span>
@@ -245,7 +245,7 @@
 							<Picture
 								src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp"
 								alt="Before facial skin therapy result"
-								class="size-full object-cover object-[center_75%]"
+								class="object-cover object-[center_75%]"
 								loading="eager"
 								width={720}
 								height={950}
@@ -284,7 +284,7 @@
 							<Picture
 								src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp"
 								alt="After 10 days facial skin therapy result"
-								class="size-full object-cover"
+								class="object-cover"
 								loading="eager"
 								width={720}
 								height={950}

@@ -130,7 +130,7 @@ func (h *DiagnosticHandler) sendNotificationEmail(req *DiagnosticRequest) ([]err
 				body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; line-height: 1.6; margin: 0; padding: 0; background-color: #f7f5ef; }
 				.container { max-width: 600px; margin: 40px auto; }
 				.header { border-bottom: 2px solid #1a1a1a; padding-bottom: 16px; margin-bottom: 32px; }
-				.header h1 { font-size: 18px; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 4px 0; font-weight: 600; }
+				.header h1 { font-size: 18px; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 4px 0; font-weight: 500; }
 				.header p { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #777; margin: 0; }
 				.section { margin-bottom: 28px; }
 				.label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 6px; }

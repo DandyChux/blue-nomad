@@ -214,7 +214,7 @@
 	}
 	.label {
 		font-family: var(--bn-font-mono);
-		font-weight: 600;
+		font-weight: 500;
 		font-size: 11px;
 		letter-spacing: 1.5px;
 		text-transform: uppercase;

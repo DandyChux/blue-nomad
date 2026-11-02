@@ -222,7 +222,7 @@
 
 	h3 {
 		font-size: 1.5rem;
-		font-weight: 600;
+		font-weight: 500;
 		letter-spacing: 0.025rem;
 
 		@media screen and (min-width: 768px) {
@@ -238,7 +238,7 @@
 
 	h4 {
 		font-size: 1.125rem;
-		font-weight: 600;
+		font-weight: 500;
 		letter-spacing: 0.025rem;
 
 		@media screen and (min-width: 768px) {
@@ -270,7 +270,7 @@
 
 	button {
 		font-family: var(--font-source-code-pro);
-		font-weight: 600;
+		font-weight: 500;
 
 		&:hover {
 			/*text-decoration: underline;*/
@@ -305,7 +305,7 @@
 
 	.bn-title {
 		font-family: var(--font-harmony);
-		font-weight: 600;
+		font-weight: 500;
 		font-size: 56px;
 		line-height: 0.95;
 		text-transform: uppercase;
