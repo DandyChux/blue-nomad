@@ -44,7 +44,7 @@
 						"Where appropriate, we perform extractions to address congestion. We never force a blemish that is not ready to release, and we adjust our approach to minimize unnecessary irritation.",
 					],
 					[
-						"Will I receive facial massage?",
+						"Will I receive a facial massage?",
 						"Facial massage may be incorporated into your treatment, depending on your skin’s needs and the approach selected for your session.",
 					],
 				],

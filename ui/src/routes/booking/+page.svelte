@@ -144,7 +144,7 @@
 
 		<!-- Gradient Overlay -->
 		<div
-			class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+			class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"
 		></div>
 
 		<!-- Hero Content -->
@@ -200,7 +200,7 @@
 	</div>
 
 	<div
-		class="relative overflow-hidden px-6 md:px-10 py-2 lg:py-8 mt-12 lg:mt-30"
+		class="relative overflow-hidden px-6 md:px-10 py-2 lg:py-8 mt-12 lg:mt-18"
 	>
 		<div
 			class="mx-auto max-w-[1100px] space-x-4 space-y-4 md:space-x-8 lg:space-x-10 lg:space-y-8"
@@ -218,7 +218,9 @@
 			</div>
 
 			<div class="flex items-center space-x-4 justify-between w-full">
-				<div class="relative group ring-2 ring-card rounded-[15px]">
+				<div
+					class="relative group ring-2 ring-card rounded-[15px] w-1/2 lg:w-auto"
+				>
 					<a
 						class="absolute inset-0"
 						href={`/booking/${coreTreatment?.id}`}
@@ -230,17 +232,15 @@
 						<Picture
 							src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp"
 							alt="Before facial skin therapy result"
-							class="object-cover object-[center_75%]"
+							class="object-cover -translate-y-[50px] lg:-translate-y-[120px] w-full"
 							loading="eager"
-							width={720}
-							height={950}
-							sizes="(max-width: 1024px) 50vw, 50vw"
+							sizes="(max-width: 1024px) 50vw, 500px"
 							sources={[
 								{
 									type: "image/webp",
 									srcset: generateSrcSet(
 										"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp",
-										[480, 768, 1024, 1440],
+										[200, 400, 600],
 										"webp",
 										85,
 									),
@@ -257,7 +257,9 @@
 					</span>
 				</div>
 
-				<div class="relative group ring-2 ring-card rounded-[15px]">
+				<div
+					class="relative group ring-2 ring-card rounded-[15px] w-1/2 lg:w-auto"
+				>
 					<a
 						class="absolute inset-0"
 						href={`/booking/${coreTreatment?.id}`}
@@ -269,17 +271,15 @@
 						<Picture
 							src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp"
 							alt="After 10 days facial skin therapy result"
-							class="object-cover"
+							class="object-cover w-full"
 							loading="eager"
-							width={720}
-							height={950}
-							sizes="(max-width: 1024px) 50vw, 50vw"
+							sizes="(max-width: 1024px) 50vw, 500px"
 							sources={[
 								{
 									type: "image/webp",
 									srcset: generateSrcSet(
 										"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp",
-										[480, 768, 1024, 1440],
+										[200, 400, 600],
 										"webp",
 										85,
 									),
