@@ -476,7 +476,7 @@
 				>
 				<Item.Content>
 					<Item.Title
-						class="uppercase text-warm-ivory text-2xl w-full justify-center lg:justify-start"
+						class="uppercase text-warm-ivory text-2xl w-full text-center lg:text-start"
 						>Better Skin Health</Item.Title
 					>
 					<Item.Description
@@ -507,7 +507,7 @@
 				>
 				<Item.Content>
 					<Item.Title
-						class="line-clamp-none uppercase text-warm-ivory text-2xl w-full"
+						class="line-clamp-none uppercase text-warm-ivory text-2xl w-full text-center lg:text-start"
 						>Not sure where to start?</Item.Title
 					>
 					<Item.Description
