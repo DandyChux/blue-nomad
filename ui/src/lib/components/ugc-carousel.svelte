@@ -180,7 +180,7 @@
 	}
 </script>
 
-<section class="bn-section social">
+<section class="social flex flex-col items-center px-14 py-2 lg:py-8">
 	<div class="bn-inner head">
 		<div>
 			<p class="bn-kicker">Skin Health and Beyond</p>
@@ -192,6 +192,7 @@
 			event="social_follow"
 			location="social"
 			external
+			class="place-self-center lg:place-self-end"
 		/>
 	</div>
 

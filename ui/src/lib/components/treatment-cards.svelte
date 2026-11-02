@@ -26,15 +26,15 @@
 			link: "/booking/TWYSCIC46EIMS3SD2A6UMJ5H",
 		},
 		{
-			title: "LED SkinBoost 30min",
+			title: "Skin Consult 30min",
 			description:
-				"Targeted express treatment for long-term skin vitality. LED light therapy paired with hydration and a power cleanse to reduce inflammation and boost collagen. Complimentary for members.",
-			price: 130,
+				"In-depth skin consult with a personalized at-home care and treatment recommendations. Consult fee redeemable toward a future treatment or product purchase. Available in-studio or virtually.",
+			price: 120,
 			defaultImage:
 				"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/Mel/Look%202%20233.webp",
 			hoverImage:
 				"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/Mel/Look%202%20145.webp",
-			link: "/booking/JMC7AN5H5BJJPPJBEPVFMQDL",
+			link: "/booking/VPBLSPCLMIHKLXHLPE2BY3HL",
 		},
 		{
 			title: "Facial ST Membership",

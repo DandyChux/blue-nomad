@@ -82,7 +82,7 @@
 
 				<Button
 					variant="link"
-					href="#treatments"
+					href="/booking"
 					class={buttonVariants({
 						class: "h-auto uppercase rounded-full py-2 px-10 mt-4 pointer-events-auto font-source-code-pro",
 						variant: "outline",

@@ -171,8 +171,8 @@
 				class="text-brand-white/70 md:text-[18px] max-w-xl leading-relaxed font-light text-center lg:text-start"
 				in:fly={{ y: 20, duration: 600, delay: 400 }}
 			>
-				Our Facial Skin Therapy is a personalized treatment that
-				improves skin health and clarity for all skin.
+				Our core <em>Facial Skin Therapy (ST)</em> is a personalized treatment
+				that improves skin health and clarity for all skin.
 			</p>
 
 			<Button
@@ -188,7 +188,7 @@
 					size: "lg",
 				})}
 			>
-				Book Core Facial ST
+				Book Facial ST
 			</Button>
 			<!-- <BookButton
 				href={`/booking/${featuredTreatmentId}`}
@@ -214,19 +214,15 @@
 			</Empty.Root>
 		</div>
 	{:else}
-		<div
-			class="relative overflow-hidden px-6 py-10 md:px-10 md:py-14 lg:px-16 lg:py-20"
-		>
+		<div class="relative overflow-hidden px-6 md:px-10 py-2 lg:py-8">
 			<div
-				class="mx-auto grid max-w-[1200px] grid-cols-2 items-start gap-x-4 gap-y-4 md:gap-x-8 lg:gap-x-10 lg:gap-y-8"
+				class="mx-auto max-w-[1100px] space-x-4 space-y-4 md:space-x-8 lg:space-x-10 lg:space-y-8"
 			>
-				<div class="col-start-1 row-start-1 justify-self-start">
+				<div class="flex items-center justify-between w-full">
 					<p class="text-[36px] leading-none lg:text-[48px]">
 						Before
 					</p>
-				</div>
 
-				<div class="justify-self-end lg:col-start-2 lg:row-start-1">
 					<p
 						class="text-left font-source-code-pro text-[12px] font-medium uppercase leading-[1.35] tracking-[0.2em] lg:text-right lg:text-[1.5rem]"
 					>
@@ -236,125 +232,133 @@
 					</p>
 				</div>
 
-				<div
-					class="relative group hover:ring-2 ring-card rounded-[15px] col-start-1 row-start-2"
-				>
-					<a
-						class="absolute inset-0"
-						href={`/booking/${coreTreatment?.id}`}
-					/>
-
-					<span
-						class="absolute top-2 lg:top-6 w-full text-[12px] lg:text-base text-center uppercase font-source-code-pro font-medium"
-					>
-						Core Treatment
-					</span>
-					<div
-						class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
-					>
-						<Picture
-							src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp"
-							alt="Before facial skin therapy result"
-							class="size-full object-cover object-[center_75%]"
-							loading="eager"
-							width={720}
-							height={950}
-							sizes="(max-width: 1023px) 50vw, 50vw"
-							sources={[
-								{
-									type: "image/webp",
-									srcset: generateSrcSet(
-										"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp",
-										[480, 768, 1024, 1440],
-										"webp",
-										85,
-									),
-								},
-							]}
+				<div class="flex items-center space-x-4 justify-between w-full">
+					<div class="relative group ring-2 ring-card rounded-[15px]">
+						<a
+							class="absolute inset-0"
+							href={`/booking/${coreTreatment?.id}`}
 						/>
+
+						<span
+							class="absolute top-2 lg:top-6 w-full text-[12px] lg:text-base text-center uppercase font-source-code-pro font-medium"
+						>
+							Core Treatment
+						</span>
+						<div
+							class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
+						>
+							<Picture
+								src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp"
+								alt="Before facial skin therapy result"
+								class="size-full object-cover object-[center_75%]"
+								loading="eager"
+								width={720}
+								height={950}
+								sizes="(max-width: 1024px) 50vw, 50vw"
+								sources={[
+									{
+										type: "image/webp",
+										srcset: generateSrcSet(
+											"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20After%20(Former).webp",
+											[480, 768, 1024, 1440],
+											"webp",
+											85,
+										),
+									},
+								]}
+							/>
+						</div>
+						<span
+							class="absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] transition-opacity duration-300"
+						>
+							{getDuration(coreTreatment)} Min — ${getPrice(
+								coreTreatment,
+							)}
+						</span>
 					</div>
-					<span
-						class="absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"
-					>
-						{getDuration(coreTreatment)} Min — ${getPrice(
-							coreTreatment,
-						)}
-					</span>
-				</div>
 
-				<div
-					class="relative group hover:ring-2 ring-card rounded-[15px] col-start-2 row-start-2"
-				>
-					<a
-						class="absolute inset-0"
-						href={`/booking/${coreTreatment?.id}`}
-					/>
-
-					<span
-						class="absolute top-2 text-[12px] lg:text-base lg:top-6 w-full text-center uppercase font-source-code-pro font-medium"
-					>
-						Core Treatment
-					</span>
-					<div
-						class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
-					>
-						<Picture
-							src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp"
-							alt="After 10 days facial skin therapy result"
-							class="size-full scale-175 object-cover object-[20px_80%]"
-							loading="eager"
-							width={720}
-							height={950}
-							sizes="(max-width: 1023px) 50vw, 50vw"
-							sources={[
-								{
-									type: "image/webp",
-									srcset: generateSrcSet(
-										"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp",
-										[480, 768, 1024, 1440],
-										"webp",
-										85,
-									),
-								},
-							]}
+					<div class="relative group ring-2 ring-card rounded-[15px]">
+						<a
+							class="absolute inset-0"
+							href={`/booking/${coreTreatment?.id}`}
 						/>
+
+						<span
+							class="absolute top-2 lg:top-6 w-full text-[12px] lg:text-base text-center uppercase font-source-code-pro font-medium"
+						>
+							Core Treatment
+						</span>
+						<div
+							class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
+						>
+							<Picture
+								src="https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp"
+								alt="After 10 days facial skin therapy result"
+								class="size-full object-cover"
+								loading="eager"
+								width={720}
+								height={950}
+								sizes="(max-width: 1024px) 50vw, 50vw"
+								sources={[
+									{
+										type: "image/webp",
+										srcset: generateSrcSet(
+											"https://blue-nomad.nyc3.cdn.digitaloceanspaces.com/studio/Treatment%20(After).webp",
+											[480, 768, 1024, 1440],
+											"webp",
+											85,
+										),
+									},
+								]}
+							/>
+						</div>
+						<span
+							class="absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] transition-opacity duration-300"
+						>
+							Book Now
+						</span>
 					</div>
-					<span
-						class="absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"
+				</div>
+
+				<div class="flex items-center justify-between w-full">
+					<p
+						class="font-source-code-pro text-[12px] font-semibold leading-[1.2em] tracking-[1.6px] md:text-[16px] lg:w-[450px]"
 					>
-						Book Now
-					</span>
+						Perosnalized treatments for all skin, with expertise in
+						breakouts, dark spots, and sensitive skin.
+					</p>
+
+					<div class="col-start-2 row-start-3 justify-self-end">
+						<p class="text-[36px] leading-none lg:text-[48px]">
+							After
+						</p>
+					</div>
 				</div>
 
-				<p
-					class="font-source-code-pro text-[12px] font-semibold leading-[1.2em] tracking-[1.6px] md:text-[16px] lg:col-start-1 lg:row-start-3"
-				>
-					Perosnalized treatments for all skin, with expertise in
-					breakouts, dark spots and sensitive skin.
-				</p>
-
-				<div class="col-start-2 row-start-3 justify-self-end">
-					<p class="text-[36px] leading-none lg:text-[48px]">After</p>
+				<div class="flex items-center justify-around w-full">
+					<Button
+						variant="link"
+						href={`/booking/${coreTreatment.id}`}
+						class={buttonVariants({
+							size: "lg",
+							variant: "outline",
+							class: "col-span-1 col-start-1 row-start-4 w-fit min-w-0 max-w-full place-self-center lg:place-self-end rounded-full px-8 sm:px-6 lg:px-14 uppercase font-source-code-pro",
+						})}
+					>
+						Book Facial ST
+					</Button>
+					<Button
+						variant="link"
+						href="/shop"
+						class={buttonVariants({
+							size: "lg",
+							variant: "outline",
+							class: "w-fit min-w-0 max-w-full rounded-full px-8 sm:px-6 lg:px-14 col-span-1 col-start-2 row-start-4 place-self-start uppercase font-source-code-pro",
+						})}
+					>
+						Shop
+					</Button>
 				</div>
-
-				<Button
-					variant="link"
-					href={`/booking/${coreTreatment.id}`}
-					class={buttonVariants({
-						size: "lg",
-						variant: "outline",
-						class: "col-span-2 col-start-1 row-start-4 mt-6 w-fit place-self-center lg:place-self-end rounded-full px-14 lg:col-span-1 lg:col-start-1 lg:row-start-4 lg:mt-0 uppercase font-source-code-pro",
-					})}>Book Facial ST</Button
-				>
-				<Button
-					variant="link"
-					href="/shop"
-					class={buttonVariants({
-						size: "lg",
-						variant: "outline",
-						class: "hidden w-fit rounded-full px-14 lg:col-start-2 lg:row-start-4 lg:block lg:place-self-start uppercase font-source-code-pro",
-					})}>Shop</Button
-				>
 			</div>
 		</div>
 
@@ -415,7 +419,7 @@
 						</div>
 
 						<span
-							class="hidden lg:block absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"
+							class="hidden lg:block absolute bottom-0 text-[12px] lg:text-base p-2 w-full text-center uppercase font-source-code-pro font-medium bg-card text-brand-white rounded-b-[15px] transition-opacity duration-300"
 						>
 							Book Treatment
 						</span>
@@ -450,7 +454,7 @@
 		items={pressBrands}
 		direction="right"
 		speed="normal"
-		class="mask-[linear-gradient(to_right,transparent_0%,white_20%,white_100%)] w-full max-w-[unset] my-16"
+		class="mask-[linear-gradient(to_right,transparent_0%,white_20%,white_100%)] w-full max-w-[unset]"
 	/>
 
 	<!-- Social & Testimonials -->
@@ -470,7 +474,7 @@
 		</div>
 
 		<div
-			class="w-full flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-6 text-center"
+			class="w-full flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-6"
 		>
 			<Item.Root
 				variant="outline"
@@ -478,27 +482,27 @@
 			>
 				<Item.Header
 					class="uppercase text-primary-foreground/70 font-source-code-pro"
-					>Membership</Item.Header
+					>Custom Facial</Item.Header
 				>
 				<Item.Content>
 					<Item.Title
 						class="uppercase text-warm-ivory text-2xl w-full justify-center lg:justify-start"
-						>Not a member yet?</Item.Title
+						>Better Skin Health</Item.Title
 					>
 					<Item.Description
-						class="uppercase text-primary-foreground/75 font-source-code-pro text-lg lg:text-start text-center"
+						class="uppercase text-primary-foreground/75 font-source-code-pro text-base lg:text-start text-center"
 					>
-						Member rates on treatments & products
+						Experience our core Facial ST - $235
 					</Item.Description>
 				</Item.Content>
 				<Item.Actions class="place-self-center">
 					<Button
 						variant="link"
-						href="mailto:memberships@bluenomad.nyc?subject=Membership Inquiry&body=I'm interested in joining the Blue Nomad membership program."
+						href="/booking/TWYSCIC46EIMS3SD2A6UMJ5H"
 						class={buttonVariants({
 							variant: "outline",
 							class: "uppercase border-warm-ivory text-warm-ivory rounded-full px-8",
-						})}>Become a member</Button
+						})}>Book Facial ST</Button
 					>
 				</Item.Actions>
 			</Item.Root>
@@ -509,16 +513,16 @@
 			>
 				<Item.Header
 					class={"uppercase text-primary-foreground/70 font-source-code-pro text-center"}
-					>First Visit</Item.Header
+					>Skin Consult</Item.Header
 				>
 				<Item.Content>
 					<Item.Title
-						class={"uppercase text-warm-ivory text-2xl w-full justify-center lg:justify-start"}
-						>Not sure where to start</Item.Title
+						class="line-clamp-none uppercase text-warm-ivory text-2xl w-full"
+						>Not sure where to start?</Item.Title
 					>
 					<Item.Description
-						class={"uppercase text-primary-foreground/75 font-source-code-pro text-lg text-center lg:text-start"}
-						>Begin with our signature Facial ST</Item.Description
+						class={"uppercase text-primary-foreground/75 font-source-code-pro text-base text-center lg:text-start"}
+						>Begin with a consultation - $120</Item.Description
 					>
 				</Item.Content>
 				<Item.Actions>
@@ -528,7 +532,7 @@
 						class={buttonVariants({
 							variant: "outline",
 							class: "uppercase border-warm-ivory text-warm-ivory rounded-full px-8",
-						})}>Book Facial ST</Button
+						})}>Book Consult</Button
 					>
 				</Item.Actions>
 			</Item.Root>

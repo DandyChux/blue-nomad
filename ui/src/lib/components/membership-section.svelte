@@ -18,10 +18,9 @@
 			<p class="bn-kicker">Membership</p>
 			<h2 class="bn-title">Facial ST Membership</h2>
 			<p class="bn-body bn-brief">
-				Monthly access to our core Facial ST at a preferred rate, plus
-				ongoing skin health support and wellness perks. Existing members
-				may book below. For new membership enquiries, please email
-				memberships@bluenomad.nyc.
+				Get monthly access to our core Facial ST at a preferred rate,
+				plus ongoing skin health support and wellness perks. For new
+				membership enquiries, please email memberships@bluenomad.nyc.
 			</p>
 			<dl class="rows">
 				{#each membershipRows as [label, value]}

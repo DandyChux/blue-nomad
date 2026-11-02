@@ -28,8 +28,8 @@
 
 	const faq = {
 		title: "Skin Health Guide",
-		intro: "Personalized skin care starts with understanding your skin. Explore our approach to common skin concerns, treatments and membership.",
-		ready: "Ready to begin?",
+		intro: "Personalized skin care starts with understanding your skin. Explore our approach to common skin concerns.",
+		ready: "Better skin health?",
 		cta: "Book Facial ST",
 		topics: [
 			{
@@ -97,7 +97,7 @@
 				items: [
 					[
 						"Are facials suitable if I am focused on fine lines and skin longevity?",
-						"Absolutely. Regular treatments can support hydration, skin maintenance and a consistent approach to skin health over time. We tailor each session to your skin’s needs and evolving goals.",
+						"Absolutely. Regular treatments can support hydration, skin maintenance and a consistent approach to fine lines and skin health over time. We tailor each session to your skin’s needs and evolving goals.",
 					],
 					[
 						"Can facials help with fine lines?",
@@ -137,7 +137,9 @@
 <section class="bn-section" id="faq">
 	<div class="bn-inner faq">
 		<header>
-			<h2 class="bn-title">{faq.title}</h2>
+			<h2 class="bn-title">
+				Skin Health <span class="lowercase text-[60px]">g</span>uide
+			</h2>
 			<p class="bn-body bn-brief intro">{faq.intro}</p>
 		</header>
 
