@@ -239,11 +239,6 @@
 							href={`/booking/${coreTreatment?.id}`}
 						/>
 
-						<span
-							class="absolute top-2 lg:top-6 w-full text-[12px] lg:text-base text-center uppercase font-source-code-pro font-medium"
-						>
-							Core Treatment
-						</span>
 						<div
 							class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
 						>
@@ -283,11 +278,6 @@
 							href={`/booking/${coreTreatment?.id}`}
 						/>
 
-						<span
-							class="absolute top-2 lg:top-6 w-full text-[12px] lg:text-base text-center uppercase font-source-code-pro font-medium"
-						>
-							Core Treatment
-						</span>
 						<div
 							class="aspect-[0.85] w-auto lg:h-[600px] mx-auto overflow-hidden rounded-[15px] shadow-[0_0_0_1px_rgba(255,255,255,0.28)_inset]"
 						>
