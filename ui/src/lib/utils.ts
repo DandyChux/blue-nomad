@@ -10,11 +10,20 @@ export function roundTo(num: number, decimals: number): number {
 	return Math.round(num * multiplier) / multiplier;
 }
 
-function imageURL(src: string, width: number): string {
+function imageURL(
+	src: string,
+	width: number,
+	format: "webp" | "avif",
+	quality: number,
+): string {
 	if (!src.startsWith("https://")) return src;
 
-	const query = new URLSearchParams({ src });
-	return `/api/images/${width}?${query}`;
+	const query = new URLSearchParams({
+		src,
+		format,
+		quality: String(quality),
+	});
+	return `api/images/${width}?${query}`;
 }
 
 /**
@@ -22,13 +31,13 @@ function imageURL(src: string, width: number): string {
  */
 export function generateSrcSet(
 	src: string,
-	widths: number[] = [400, 800, 1200, 1600],
+	widths: number[] = [200, 400, 600, 800],
 	format: "webp" | "avif" = "webp",
 	quality: number = 85,
 ): string {
 	return widths
 		.map((width) => {
-			return `${imageURL(src, width)} ${width}w`;
+			return `${imageURL(src, width, format, quality)} ${width}w`;
 		})
 		.join(", ");
 }

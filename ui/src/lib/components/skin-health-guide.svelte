@@ -29,7 +29,7 @@
 	const faq = {
 		title: "Skin Health Guide",
 		intro: "Personalized skin care starts with understanding your skin. Explore our approach to common skin concerns.",
-		ready: "Better skin health?",
+		ready: "Better skin?",
 		cta: "Book Facial ST",
 		topics: [
 			{
