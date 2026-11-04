@@ -81,7 +81,7 @@
 											type: "image/webp",
 											srcset: generateSrcSet(
 												imageUrls[activeImageIndex],
-												[600, 1000, 1400],
+												[300, 600, 900],
 												"webp",
 												85,
 											),

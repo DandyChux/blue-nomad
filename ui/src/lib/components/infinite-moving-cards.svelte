@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import Picture from "./picture.svelte";
 
 	export type MovingCardProps = {
 		name: string;
@@ -91,7 +92,7 @@
 					<div
 						class="relative w-full md:h-40 h-32 mb-4 overflow-hidden rounded-lg flex place-items-center aspect-4/3"
 					>
-						<img
+						<Picture
 							src={item.image}
 							alt="Image for {item.name}"
 							class="object-cover object-center mx-auto"

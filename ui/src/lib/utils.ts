@@ -23,7 +23,7 @@ function imageURL(
 		format,
 		quality: String(quality),
 	});
-	return `api/images/${width}?${query}`;
+	return `/api/images/${width}?${query}`;
 }
 
 /**

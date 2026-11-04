@@ -109,7 +109,7 @@
 				width="300"
 				height="300"
 				sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, (max-width: 1280px) 50vw, 33vw"
-				loading="eager"
+				loading="lazy"
 			/>
 		</div>
 
@@ -143,6 +143,7 @@
 						width="175"
 						height="75"
 						sizes="(max-width: 640px) 100vw, 33vw"
+						loading="lazy"
 						sources={[
 							{
 								type: "image/webp",
@@ -174,7 +175,7 @@
 				alt={centralLogo.alt}
 				width="250"
 				height="200"
-				loading="eager"
+				loading="lazy"
 			/>
 		</div>
 
@@ -191,6 +192,7 @@
 					alt={logo.alt}
 					width="125"
 					height="75"
+					loading="lazy"
 				/>
 			</div>
 		{/each}

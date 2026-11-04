@@ -162,7 +162,7 @@
 									src={testimonial.image}
 									srcset={generateSrcSet(
 										testimonial.image,
-										[400, 800, 1200, 1600],
+										[100, 200, 300],
 										"webp",
 										85,
 									)}
@@ -170,7 +170,7 @@
 									class="object-cover size-full"
 									loading="lazy"
 									placeholder="blur"
-									sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, (max-width: 1280px) 50vw, 33vw"
+									sizes="(max-width: 640px) 75px, (max-width: 1280px) 100px, 125px"
 								/>
 							</div>
 
