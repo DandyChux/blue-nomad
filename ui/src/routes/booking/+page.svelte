@@ -222,7 +222,7 @@
 					class="relative group ring-2 ring-card rounded-[15px] w-1/2 lg:w-auto"
 				>
 					<a
-						class="absolute inset-0"
+						class="absolute inset-0 z-10"
 						href={`/booking/${coreTreatment?.id}`}
 					/>
 
@@ -261,7 +261,7 @@
 					class="relative group ring-2 ring-card rounded-[15px] w-1/2 lg:w-auto"
 				>
 					<a
-						class="absolute inset-0"
+						class="absolute inset-0 z-10"
 						href={`/booking/${coreTreatment?.id}`}
 					/>
 
